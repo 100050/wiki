@@ -1,0 +1,26 @@
+{
+  "name": "wiki",
+  "version": "1.0.0",
+  "description": "위키 웹",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "wiki"
+  },
+  "keywords": [
+    "wiki",
+    "web",
+    "nodejs"
+  ],
+  "author": "100050",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-async-handler": "^1.2.0"
+  }
+}
