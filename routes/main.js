@@ -1,12 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const asyncHandler = require("express-async-handler");
+const controllers = require("../controllers/main");
 
-router.get("/", asyncHandler(async (req, res) => { 
-    const locals =  {
-        title: "index"
-    };
-    res.render("index", { locals });
-}))
+router.get("/", controllers.viewMain);
+
+router.get("/document/:title", controllers.viewDocument);
+
+router.get("/create/:title", controllers.viewCreate);
+
+router.post("/create/:title", controllers.createDocument);
 
 module.exports = router;

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= locals.title %> - 부경위키</title>
+</head>
+<body>
+    <header>
+        <h1><a href="/">부경위키</a></h1>
+        <nav>
+            <ul>
+                <li>최근 변경</li>
+                <li>최근 토론</li>
+                <li>실시간 검색 순위</li>
+            </ul>
+        </nav>
+        <input type="text" placeholder="여기에서 검색">
+        <button>검색</button>
+        <a href="./login.ejs">로그인</a>
+    </header>
+    <main>
+        <%- body %>
+    </main>
+    <footer>
+        footer 쓸만한 방침이 없습니다.
+    </footer>
+</body>
+</html>
