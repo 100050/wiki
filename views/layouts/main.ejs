@@ -17,12 +17,18 @@
         </nav>
         <input type="text" placeholder="여기에서 검색">
         <button>검색</button>
-        <a href="./login.ejs">로그인</a>
+        <% if (locals.isLogin) { %>
+            <a href="/logout">로그아웃</a>
+        <% } else { %>
+            <a href="/login">로그인</a>
+        <% } %>
+        <hr>
     </header>
     <main>
         <%- body %>
     </main>
     <footer>
+        <hr>
         footer 쓸만한 방침이 없습니다.
     </footer>
 </body>

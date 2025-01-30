@@ -2,10 +2,11 @@ const Document = require("../models/document");
 const asyncHandler = require("express-async-handler");
 const mainLayout = "../views/layouts/main.ejs";
 
-// get /, /document/대문
+// get /
 const viewMain = asyncHandler(async (req, res) => { 
     const locals =  {
-        title: "대문"
+        title: "대문",
+        isLogin: req.isLogin,
     };
     res.render("index", { locals, layout: mainLayout });
 });
@@ -13,7 +14,8 @@ const viewMain = asyncHandler(async (req, res) => {
 // get /document/:title
 const viewDocument = asyncHandler(async (req, res) => { 
     const locals =  {
-        title: req.params.title
+        title: req.params.title,
+        isLogin: req.isLogin,
     };
     const document = await Document.findOne( { title: req.params.title });
     if (!document) {
@@ -26,7 +28,8 @@ const viewDocument = asyncHandler(async (req, res) => {
 // get /create/:title
 const viewCreate = asyncHandler(async (req, res) => { 
     const locals =  {
-        title: req.params.title
+        title: req.params.title,
+        isLogin: req.isLogin,
     };
     
     res.render("create", { locals, layout: mainLayout });

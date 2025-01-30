@@ -6,8 +6,8 @@ router.get("/", controllers.viewMain);
 
 router.get("/document/:title", controllers.viewDocument);
 
-router.get("/create/:title", controllers.viewCreate);
-
-router.post("/create/:title", controllers.createDocument);
+router.route("/create/:title")
+    .get(controllers.viewCreate)
+    .post(controllers.createDocument);
 
 module.exports = router;
