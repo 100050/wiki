@@ -15,8 +15,10 @@
                 <li>실시간 검색 순위</li>
             </ul>
         </nav>
-        <input type="text" placeholder="여기에서 검색">
-        <button>검색</button>
+        <form action="/search" method="GET">
+            <input name="query" type="text" placeholder="여기에서 검색">
+            <input type="submit" value="검색">
+        </form>
         <% if (locals.isLogin) { %>
             <a href="/logout">로그아웃</a>
         <% } else { %>

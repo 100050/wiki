@@ -23,6 +23,7 @@ app.use(cookieParser());
 app.use(checkLogin);
 
 app.use("/", require("./routes/main"));
+app.use("/", require("./routes/search"));
 app.use("/", require("./routes/user"));
 
 app.listen(port, () => {

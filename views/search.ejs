@@ -1,0 +1,13 @@
+<h2>검색어: <%= query %></h2>
+
+<% if (!documents.length) { %>
+    <p>검색 결과가 없습니다. <a href="/create/<%= query %>"><%= query %></a> 문서를 만들시겠습니까?</p>
+<% } %>
+
+<% documents.forEach((document) => { %>
+    <article>
+        <h3><a href="/document/<%= document.title %>"><%= document.title %></a></h3>
+        <div><%= document.body %></div>
+    </article>
+<% }); %>
+
