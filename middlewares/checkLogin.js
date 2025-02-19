@@ -7,7 +7,7 @@ const checkLogin = (req, res, next) => {
     if (token) {
         try {
             const decoded = jwt.verify(token, jwtSecret);
-            //req.userId = decoded.userId;
+            req.userId = decoded.id;
             req.isLogin = true;
         } catch(err) {
             res.redirect("/");

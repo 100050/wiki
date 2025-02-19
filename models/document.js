@@ -9,9 +9,13 @@ const documentSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    createAt: {
-        type: Date,
-        default: Date.now(),
+    editUser: {
+        type: [String],
+        required: true,
+    },
+    editAt: {
+        type: [Date],
+        default: [Date.now()], // 잘 동작되는지 확인
     }
 });
 

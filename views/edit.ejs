@@ -1,0 +1,9 @@
+<h1><%= locals.title %></h1>
+
+<form action="/edit/<%= locals.title %>" method="POST">
+    <label for="body"><b>내용</b></label>
+    <textarea name="body" id="body" cols="50" rows="10" placeholder="게시물 내용"><%= document.body %></textarea>
+
+    <input type="submit" value="등록">
+    로그인을 안할 시 역사에 IP로 저장됩니다. 
+</form>

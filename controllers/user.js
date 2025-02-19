@@ -11,8 +11,8 @@ const viewLogin = asyncHandler(async (req, res) => {
         title: "로그인",
         isLogin: req.isLogin,
     };
-    const isLogin = req.isLogin;
-    res.render("login", { locals, err: null, isLogin,  layout: mainLayout });
+
+    res.render("login", { locals, err: null,  layout: mainLayout });
 });
 
 // post /login

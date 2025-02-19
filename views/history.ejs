@@ -1,0 +1,6 @@
+<h1><%= locals.title %> 역사</h1>
+
+<% histories.reverse().forEach((history) => { %>
+    <p><%= history.editUser %> : <%= history.editAt %></p>
+<% }); %>
+
