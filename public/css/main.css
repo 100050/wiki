@@ -1,0 +1,122 @@
+@import "typo.css";
+@import "setting.css";
+@import "layout.css";
+
+/* document */
+.document .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+.document ul {
+    border: 1px solid black;
+    border-radius: 8px;
+    align-items: center;
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.document li {
+    display: inline;
+    width: 62px;
+    height: 24px;
+    padding: 8px 12px;
+}
+
+.document li:last-child {
+    border-left: 1px solid black;
+}
+
+.document li a {
+    display: flex;
+    width: 62px;
+    justify-content: space-between; 
+}
+
+/* search */
+.search p {
+    margin-top: 24px;
+}
+
+.search h3 {
+    margin-top: 24px;
+}
+
+.search div {
+    margin-top: 16px;
+}
+
+/* history */
+.history h1 {
+    margin-bottom: 24px;
+}
+
+.history p {
+    margin-bottom: 12px;
+}
+
+/* login */
+.login form {
+    width: 411px;
+    margin: 0 auto;
+    margin-top: 90px;
+}   
+
+.login form input {
+    border: 1px solid black;
+    width: 401px;
+    height: 38px;
+    border-radius: 4px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    padding-left: 8px;
+}
+
+.login form button {
+    width: 411px;
+    height: 38px;
+    color: white;
+    background-color: #05317C;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.login div {
+    width: 100%;
+    text-align: center;
+}
+
+.login div a {
+    text-decoration: underline;
+    color: #2d2d2d;
+}
+
+/* join */
+.join form {
+    width: 411px;
+    margin: 0 auto;
+    margin-top: 90px;
+}   
+
+.join form input {
+    border: 1px solid black;
+    width: 401px;
+    height: 38px;
+    border-radius: 4px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    padding-left: 8px;
+}
+
+.join form button {
+    width: 411px;
+    height: 38px;
+    color: white;
+    background-color: #05317C;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+/* edit */

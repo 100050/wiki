@@ -15,7 +15,7 @@ const documentSchema = new mongoose.Schema({
     },
     editAt: {
         type: [Date],
-        default: [Date.now()], // 잘 동작되는지 확인
+        default: [Date.now()],
     }
 });
 

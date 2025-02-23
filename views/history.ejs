@@ -1,6 +1,9 @@
-<h1><%= locals.title %> 역사</h1>
+<div class="history">
+    <h1 class="title1"><%= locals.title %> 역사</h1>
 
-<% histories.reverse().forEach((history) => { %>
-    <p><%= history.editUser %> : <%= history.editAt %></p>
-<% }); %>
+    <% histories.reverse().forEach((history) => { %>
+        <!-- 날짜 형식 변경 -->
+        <p class="body"><%= history.editUser %> : <%= history.editAt %></p>
+    <% }); %>
+</div>
 

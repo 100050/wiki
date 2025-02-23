@@ -1,0 +1,40 @@
+/* typography */
+.title1 {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.title2 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.title3 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.head {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.button {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.input {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.body {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.body2 {
+    font-size: 14px;
+    font-weight: 400;
+}

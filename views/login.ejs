@@ -1,15 +1,17 @@
-<h3>로그인</h3>
-<form action="/login" method="POST">
-    <lable for="id"><b>아이디</b></lable>
-    <input type="text" name="id" id="id">
-    
-    <lable for="password"><b>비밀번호</b></lable>
-    <input type="password" name="password" id="password">
-    
-    <input type="submit" value="로그인" class="btn">
-</form>
+<div class="login">
+    <h1 class="title1">로그인</h1>
+    <form action="/login" method="POST">
+        <lable for="id" class="body">아이디</lable>
+        <input class="input" type="text" name="id" id="id">
+        
+        <lable for="password" class="body">비밀번호</lable>
+        <input class="input" type="password" name="password" id="password">
+        
+        <button class="button" type="submit">로그인</button>
+    </form>
 
-<a href="/join">회원가입</a>
+    <div><a class="body2" href="/join">회원가입</a></div>
+</div>
 
 <% if ( err ) { %>
     <script>

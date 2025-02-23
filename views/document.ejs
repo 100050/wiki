@@ -1,6 +1,22 @@
-<h1><%= document.title %></h1>
-<ul>
-    <li><a href="/history/<%= document.title %>">역사</a></li>
-    <li><a href="/edit/<%= document.title %>">수정</a></li>
-</ul>
-<%= document.body %>
+<div class="document">
+    <div class="header">
+        <h1 class="title1"><%= document.title %></h1>
+        <ul>
+            <li>
+                <a href="/history/<%= document.title %>">
+                    <span class="material-symbols-outlined">history_edu</span>
+                    <span class="button">역사</span>
+                </a>
+            </li>
+            <li>
+                <a href="/edit/<%= document.title %>">
+                    <span class="material-symbols-outlined">edit</span>
+                    <span class="button">수정</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p>
+        <%= document.body %>
+    </p>
+</div>

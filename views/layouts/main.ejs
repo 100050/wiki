@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= locals.title %> - 부경위키</title>
 </head>
 <body>
     <header>
-        <h1><a href="/">부경위키</a></h1>
-        <nav>
-            <ul>
-                <li><a href="/recentChange">최근 변경</a></li>
-                <li><a href="/realtimeSearch">실시간 검색 순위</a></li>
-            </ul>
-        </nav>
-        <form action="/search" method="GET">
-            <input name="query" type="text" placeholder="여기에서 검색">
-            <input type="submit" value="검색">
-        </form>
-        <% if (locals.isLogin) { %>
-            <a href="/logout">로그아웃</a>
-        <% } else { %>
-            <a href="/login">로그인</a>
-        <% } %>
-        <hr>
+        <div class="left_menu">
+            <h2 class="title2"><a href="/">부경위키</a></h2>
+            <nav>
+                <ul>
+                    <li class="head"><a href="/recentChange">최근 변경</a></li>
+                    <li class="head"><a href="/realtimeSearch">실시간 검색 순위</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="right_menu">
+            <form action="/search" method="GET">
+                <input class="input" name="query" type="text" placeholder="여기에서 검색">
+                <button type="submit"><span class="material-symbols-outlined">search</span></button>
+            </form>
+            <% if (locals.isLogin) { %>
+                <a class="button" href="/logout">로그아웃</a>
+            <% } else { %>
+                <a class="button" href="/login">로그인</a>
+            <% } %>
+        </div>
     </header>
     <main>
         <%- body %>
     </main>
     <footer>
-        <hr>
-        footer 쓸만한 방침이 없습니다.
+        <p class="body2">footer 쓸만한 방침이 없습니다.</p>
     </footer>
 </body>
 </html>

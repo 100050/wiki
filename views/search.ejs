@@ -1,11 +1,12 @@
-<h2>검색어: <%= query %></h2>
+<div class="search">
+    <h1 class="title1">검색어: <%= query %></h1>
 
-<p>찾는 문서가 없다면 바로 <a href="/document/<%= query %>"><%= query %></a>문서로 갈 수 있습니다.</p>
+    <p class="body">찾는 문서가 없다면 바로 <a href="/document/<%= query %>"><%= query %></a>문서로 갈 수 있습니다.</p>
 
-<% documents.forEach((document) => { %>
-    <article>
-        <h3><a href="/document/<%= document.title %>"><%= document.title %></a></h3>
-        <div><%= document.body.slice(0, 90) %></div>
-    </article>
-<% }); %>
-
+    <% documents.forEach((document) => { %>
+        <article>
+            <h3 class="title3"><a href="/document/<%= document.title %>"><%= document.title %></a></h3>
+            <div class="body"><%= document.body.slice(0, 90) %></div>
+        </article>
+    <% }); %>
+</div>

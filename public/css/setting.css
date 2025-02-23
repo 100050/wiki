@@ -1,0 +1,22 @@
+/* all */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* a:visited {
+    color: inherit;
+} */
+
+body {
+    background-color: #e6e6e6;
+}
