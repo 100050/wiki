@@ -1,4 +1,5 @@
 const Document = require("../models/document");
+const MarkdownIt = require('markdown-it');
 const asyncHandler = require("express-async-handler");
 const mainLayout = "../views/layouts/main.ejs";
 
@@ -31,8 +32,18 @@ const search = asyncHandler(async (req, res) => {
         }
     ];
 
-    // const documents = await Document.find({title: req.query.query});
+    
     const documents = await Document.aggregate(search);
+    
+    const md = MarkdownIt({ 
+        html: true,
+    });
+    documents.forEach((document) => {
+        const markdown = md.render(document.body);
+        const pricePattern = /\[\[(.*?)\]\]/g;
+        const match = markdown.replaceAll(pricePattern, `<a class="link" href="/document/$1">$1</a>`);
+        document.body = match;
+    });
 
     res.render("search", { locals, documents, query: req.query.query, layout: mainLayout });
 });

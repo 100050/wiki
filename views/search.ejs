@@ -1,12 +1,28 @@
+<script>
+    var _stringToHTMLElement = function(str) {
+        var dom = document.createElement('div');
+        dom.innerHTML = str;
+        return dom;
+    };
+    var stringToHTMLElement = function(str) {
+        var dom = document.createElement('div');
+        dom.innerHTML = _stringToHTMLElement(str).innerText;
+        return dom;
+    };
+</script>
 <div class="search">
     <h1 class="title1">검색어: <%= query %></h1>
 
-    <p class="body">찾는 문서가 없다면 바로 <a href="/document/<%= query %>"><%= query %></a>문서로 갈 수 있습니다.</p>
+    <p class="body">찾는 문서가 없다면 바로 <a class="link" href="/document/<%= query %>"><%= query %></a>문서로 갈 수 있습니다.</p>
 
     <% documents.forEach((document) => { %>
         <article>
-            <h3 class="title3"><a href="/document/<%= document.title %>"><%= document.title %></a></h3>
-            <div class="body"><%= document.body.slice(0, 90) %></div>
+            <h3 class="title3"><a class="link" href="/document/<%= document.title %>"><%= document.title %></a></h3>
+            <div class="body">
+                <script>
+                    document.write(stringToHTMLElement(`<%= document.body %>`).innerText);
+                </script>
+            </div>
         </article>
     <% }); %>
 </div>

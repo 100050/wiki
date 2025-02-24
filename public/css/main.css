@@ -2,6 +2,11 @@
 @import "setting.css";
 @import "layout.css";
 
+/* index */
+.index h1 {
+    margin-bottom: 32px;
+}
+
 /* document */
 .document .header {
     display: flex;
@@ -120,3 +125,32 @@
 }
 
 /* edit */
+.edit h1 {
+    margin-bottom: 24px;
+}
+
+.edit form {
+    margin-top: 24px;
+}
+
+.edit form label {
+    display: block;
+}
+
+.edit form textarea {
+    margin: 24px 0;
+    width: 64.3vw;
+    height: 430px;
+    padding: 8px;
+    resize: none;
+}
+
+.edit form button {
+    border-radius: 4px;
+    padding: 4px 8px;
+    background-color: #0D345F;
+    color: white;
+    display: block;
+    margin-left: auto;
+    
+}

@@ -26,8 +26,12 @@ header ul {
     display: flex;
 }
 
-header ul li:last-child {
-    margin-left: 56px;
+header ul li {
+    margin-right: 56px;
+}
+
+header ul li a {
+    color: #222222;
 }
 
 header .right_menu {
@@ -72,6 +76,11 @@ header form input:focus {outline:none;}
 
 header .right_menu a {
     margin-left: 56px;
+    color: #222222;
+}
+
+header .right_menu a:hover {
+    text-decoration: underline;
 }
 
 /* main */

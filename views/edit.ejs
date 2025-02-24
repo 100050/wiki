@@ -1,11 +1,11 @@
 <div class="edit">
     <h1 class="title1"><%= locals.title %></h1>
+    <span class="body">로그인을 안할 시 역사에 IP로 저장됩니다.</span> 
     
     <form action="/edit/<%= locals.title %>" method="POST">
         <label class="title3" for="body">내용</label>
-        <textarea class="input" name="body" id="body" cols="50" rows="10" placeholder="게시물 내용"><%= document.body %></textarea>
-
+        
+        <textarea class="input" name="body" id="body" placeholder="게시물 내용"><%= document.body %></textarea>
         <button class="button" type="submit">수정</button>
-        <span class="body">로그인을 안할 시 역사에 IP로 저장됩니다.</span> 
     </form>
 </div>

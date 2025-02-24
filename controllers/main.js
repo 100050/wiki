@@ -1,4 +1,5 @@
 const Document = require("../models/document");
+const MarkdownIt = require('markdown-it');
 const User = require("../models/user");
 var requestIp = require('request-ip');
 const asyncHandler = require("express-async-handler");
@@ -23,8 +24,16 @@ const viewDocument = asyncHandler(async (req, res) => {
     if (!document) {
         return res.render("noDocument", { locals, layout: mainLayout });
     }
+
     
-    res.render("document", { locals, document, layout: mainLayout });
+    const md = MarkdownIt({ 
+        html: true,
+    });
+    const markdown = md.render(document.body);
+    const pricePattern = /\[\[(.*?)\]\]/g;
+    const match = markdown.replaceAll(pricePattern, `<a class="link" href="/document/$1">$1</a>`);
+
+    res.render("document", { locals, document, match, layout: mainLayout });
 });
 
 // get /edit/:title
