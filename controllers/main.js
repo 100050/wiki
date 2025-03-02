@@ -24,7 +24,6 @@ const viewRecentChange = asyncHandler(async (req, res) => {
     
     const documents = await Document.find().sort({ "editAt": -1 }).limit(20);
 
-
     res.render("recentChange", { locals, documents, layout: mainLayout });
 });
 
@@ -122,8 +121,12 @@ const viewHistory = asyncHandler(async (req, res) => {
     const document = await Document.findOne({ title: req.params.title });
     let histories = [];
     for (let i = 0; i < document.editAt.length; i++) {
+        const date = new Date(document.editAt[i].getTime()).toISOString().split('T')[0];
+        const time = document.editAt[i].toTimeString().split(' ')[0];
+        
         histories.push({
-            editAt: document.editAt[i], 
+            editAt: date + ' ' + time, 
+            // editAt: document.editAt[i],
             editUser: document.editUser[i]
         });
     }

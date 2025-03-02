@@ -3,10 +3,13 @@
 
     <ul class="body">
         <% for (let i = 1; i <= documents.length; i++) { %>
+            <% const date = new Date(documents[i-1].editAt[documents[i-1].editAt.length-1].getTime()).toISOString().split('T')[0];
+            const time = documents[i-1].editAt[documents[i-1].editAt.length-1].toTimeString().split(' ')[0]; %>
+            
             <li>
                 <%= i %>. 
                 <a class="link" href="/document/<%= documents[i-1].title %>"><%= documents[i-1].title %></a>
-                <span><%= documents[i-1].editAt[documents[i-1].editAt.length-1] %></span>
+                <span><%= date + ' ' + time %></span>
             </li>
         <% } %>
     </ul>
