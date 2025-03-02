@@ -2,16 +2,16 @@
     <h1 class="title1">회원가입</h1>
     <form action="/join" method="POST">
         <lable class="body" for="username">사용자 이름</lable>
-        <input class="input" type="text" name="username" id="username">
+        <input class="input" type="text" name="username" id="username" required>
 
         <lable class="body" for="id">아이디</lable>
-        <input class="input" type="text" name="id" id="id">
+        <input class="input" type="text" name="id" id="id" required>
         
         <lable class="body" for="password">비밀번호</lable>
-        <input class="input" type="password" name="password" id="password">
+        <input class="input" type="password" name="password" id="password" required>
 
         <lable class="body" for="password2">비밀번호 확인</lable>
-        <input class="input" type="password" name="password2" id="password2">
+        <input class="input" type="password" name="password2" id="password2" required>
         
         <button class="button" type="submit">회원가입</button>
     </form>

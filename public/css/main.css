@@ -7,6 +7,15 @@
     margin-bottom: 32px;
 }
 
+/* recentChange */
+.recentChage h1 {
+    margin-bottom: 32px;
+}
+
+.recentChage ul li {
+    margin-bottom: 12px;
+}
+
 /* document */
 .document .header {
     display: flex;

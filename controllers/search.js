@@ -7,10 +7,12 @@ const mainLayout = "../views/layouts/main.ejs";
     TODO: 초성검색 구현
 */
 
+// get /search
 const search = asyncHandler(async (req, res) => { 
     const locals =  {
         title: "검색",
         isLogin: req.isLogin,
+        isAdmin: req.isAdmin,
     };
 
     const search = [

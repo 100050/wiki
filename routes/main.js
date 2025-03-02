@@ -6,6 +6,8 @@ router.get("/", controllers.viewMain);
 
 router.get("/document/:title", controllers.viewDocument);
 
+router.get("/recentChange", controllers.viewRecentChange);
+
 router.route("/edit/:title")
     .get(controllers.viewEdit)
     .post(controllers.editDocument);

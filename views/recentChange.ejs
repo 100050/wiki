@@ -1,0 +1,13 @@
+<div class="recentChage">
+    <h1 class="title1">최근 변경</h1>
+
+    <ul class="body">
+        <% for (let i = 1; i <= documents.length; i++) { %>
+            <li>
+                <%= i %>. 
+                <a class="link" href="/document/<%= documents[i-1].title %>"><%= documents[i-1].title %></a>
+                <span><%= documents[i-1].editAt[documents[i-1].editAt.length-1] %></span>
+            </li>
+        <% } %>
+    </ul>
+</div>

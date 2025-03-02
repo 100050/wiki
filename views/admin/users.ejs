@@ -1,0 +1,31 @@
+<div class="users">
+    <h1 class="title1">유저</h1>
+    
+    <form action="/admin/users/search" method="GET">
+        <input class="input" name="query" type="text" placeholder="여기에서 검색" required>
+        <button type="submit"><span class="material-symbols-outlined">search</span></button>
+    </form>
+    
+    <% if (query) { %><h2>검색어: <%= query %></h2> <% } %>
+    
+    <ul class="header">
+        <li>이름</li>
+        <li>관리자</li>
+        <li>수정 권한</li>
+    </ul>
+    
+    <ul class="main">
+        <% if (users) users.forEach((user) => { %>
+            <li>
+                <span><%= user.username %></span>
+                <form action="/admin/users/<%= user._id %>" method="POST">
+                    <input type="checkbox" name="permission" value="admin" <% if (user.admin) { %> checked <% } %>>
+                    <input type="checkbox" name="permission" value="editable" <% if (user.editable) { %> checked <% } %>>
+                    <input type="text" name="query" value="<%= query %>" style="display: none;">
+                    
+                    <button type="submit">수정</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+</div>

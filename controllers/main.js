@@ -10,8 +10,22 @@ const viewMain = asyncHandler(async (req, res) => {
     const locals =  {
         title: "대문",
         isLogin: req.isLogin,
+        isAdmin: req.isAdmin,
     };
     res.render("index", { locals, layout: mainLayout });
+});
+
+const viewRecentChange = asyncHandler(async (req, res) => { 
+    const locals =  {
+        title: "대문",
+        isLogin: req.isLogin,
+        isAdmin: req.isAdmin,
+    };
+    
+    const documents = await Document.find().sort({ "editAt": -1 }).limit(20);
+
+
+    res.render("recentChange", { locals, documents, layout: mainLayout });
 });
 
 // get /document/:title
@@ -19,12 +33,12 @@ const viewDocument = asyncHandler(async (req, res) => {
     const locals =  {
         title: req.params.title,
         isLogin: req.isLogin,
+        isAdmin: req.isAdmin,
     };
     const document = await Document.findOne( { title: req.params.title });
     if (!document) {
         return res.render("noDocument", { locals, layout: mainLayout });
     }
-
     
     const md = MarkdownIt({ 
         html: true,
@@ -32,6 +46,8 @@ const viewDocument = asyncHandler(async (req, res) => {
     const markdown = md.render(document.body);
     const pricePattern = /\[\[(.*?)\]\]/g;
     const match = markdown.replaceAll(pricePattern, `<a class="link" href="/document/$1">$1</a>`);
+
+    // const err = 
 
     res.render("document", { locals, document, match, layout: mainLayout });
 });
@@ -41,11 +57,22 @@ const viewEdit = asyncHandler(async (req, res) => {
     const locals =  {
         title: req.params.title,
         isLogin: req.isLogin,
+        isAdmin: req.isAdmin,
     };
     let document = await Document.findOne( { title: req.params.title });
+    
+    if (document && !document.editable) {
+        return res.send(`<script>alert("읽기 전용 문서입니다.");location.href='/document/${req.params.title}';</script>`);
+    }
+    if (!req.isEditable) {
+        return res.send(`<script>alert("수정 권한이 없습니다.");location.href='/document/${req.params.title}';</script>`);
+    }
+
     if (!document) {
         document = {body: ""};
     }
+
+
     res.render("edit", { locals, document, layout: mainLayout });
 });
 
@@ -90,6 +117,7 @@ const viewHistory = asyncHandler(async (req, res) => {
     const locals =  {
         title: req.params.title,
         isLogin: req.isLogin,
+        isAdmin: req.isAdmin,
     };
     const document = await Document.findOne({ title: req.params.title });
     let histories = [];
@@ -106,6 +134,7 @@ const viewHistory = asyncHandler(async (req, res) => {
 module.exports = {
     viewMain,
     viewDocument,
+    viewRecentChange,
     viewEdit,
     editDocument,
     viewHistory,

@@ -24,22 +24,25 @@ const login = asyncHandler(async (req, res) => {
     const { id, password} = req.body;
     const user = await User.findOne({ id });
     if (!user) {
-        res.render("login", {locals, err: "일치하는 사용자가 없습니다.", layout: mainLayout});
-        //return res.status(401).json({ message: "일치하는 사용자가 없습니다. "});
+        return res.send(`<script>alert("일치하는 사용자가 없습니다.");location.href='/login';</script>`);
     }
 
     const isValidPassword = await bcrypt.compare(password, user.password);
 
     if (!isValidPassword) {
-        res.render("login", {locals, isLogin, err: "비밀번호가 일치하지 않습니다.", layout: mainLayout});
-        //return res.status(401).json({ message: "비밀번호가 일치하지 않습니다. "});    
+        return res.send(`<script>alert("비밀번호가 일치하지 않습니다.");location.href='/login';</script>`);
     }
 
     const token = jwt.sign({ id: user._id }, jwtSecret);
+
     res.cookie("token", token, { httpOnly: true });
-
-    res.redirect("/");
-
+    if (user.admin) {
+        res.isAdmin = true;
+        res.redirect("/admin");
+    }
+    else {
+        res.redirect("/");
+    }
     //res.render("login", {locals, err: "맞는 사용자가 없습니다.", layout: mainLayout});
 });
 

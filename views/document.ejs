@@ -16,6 +16,10 @@
             </li>
         </ul>
     </div>
+    <% if (!document.editable) { %>
+        <h3>읽기 전용</h3>
+        <br>
+    <% } %>
     <p>
         <%- match %>
     </p>

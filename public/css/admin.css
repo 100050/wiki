@@ -1,0 +1,52 @@
+/* documents */
+.documents .header {
+    display: flex;
+    width: 18vw;
+    justify-content: space-between;
+}
+
+.documents .main li {
+    display: flex;
+    width: 33vw;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding: 0 2px;
+    padding-bottom: 1px;
+}
+
+.documents .main li span {
+    margin-right: 10vw;
+    width: 100px;
+}
+
+.documents .main li form {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+/* users */
+.users .header {
+    display: flex;
+    width: 30vw;
+    justify-content: space-between;
+}
+
+.users .main li {
+    display: flex;
+    width: 43vw;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding: 0 2px;
+    padding-bottom: 1px;
+}
+
+.users .main li span {
+    margin-right: 10vw;
+}
+
+.users .main li form {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
