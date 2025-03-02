@@ -14,7 +14,8 @@ router.route("/documents")
     .get(controllers.viewDocuments);
 
 router.route("/documents/:id")
-    .post(controllers.editDocument);
+    .post(controllers.editDocument)
+    .delete(controllers.deleteDocument);
 
 router.route("/users/search")
     .get(controllers.searchUsers);

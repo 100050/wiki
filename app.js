@@ -1,6 +1,7 @@
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const cookieParser = require("cookie-parser");
+const methodOverride = require("method-override");
 const connectDB = require("./config/db");
 const checkUser = require("./middlewares/checkUser");
 require("dotenv").config();
@@ -19,6 +20,7 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(methodOverride("_method"));
 
 app.use(checkUser);
 

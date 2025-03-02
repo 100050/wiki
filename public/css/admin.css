@@ -1,7 +1,7 @@
 /* documents */
 .documents .header {
     display: flex;
-    width: 18vw;
+    width: 20vw;
     justify-content: space-between;
 }
 
@@ -21,8 +21,10 @@
 
 .documents .main li form {
     display: flex;
-    width: 100%;
-    justify-content: space-between;
+}
+
+.documents .main li input {
+    margin-right: 10vw;
 }
 
 /* users */

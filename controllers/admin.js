@@ -125,6 +125,13 @@ const editDocument = asyncHandler(async (req, res) => { // 되는지 확인
     res.redirect("/admin/documents/search?query=" + req.body.query);
 });
 
+// delete admin/documents/:id
+const deleteDocument = asyncHandler(async (req, res) => { // 되는지 확인
+    await Document.findByIdAndDelete(req.params.id);
+
+    res.redirect("/admin/documents/search?query=" + req.body.query);
+});
+
 // post admin/users/:id
 const editUser = asyncHandler(async (req, res) => { // 되는지 확인
     const user = await User.findById(req.params.id);
@@ -148,5 +155,6 @@ module.exports = {
     searchUsers,
     searchDocuments,
     editDocument,
+    deleteDocument,
     editUser,
 }

@@ -9,7 +9,7 @@ const mainLayout = "../views/layouts/main.ejs";
 
 // get /search
 const search = asyncHandler(async (req, res) => { 
-    const locals =  {
+    const locals = {
         title: "검색",
         isLogin: req.isLogin,
         isAdmin: req.isAdmin,

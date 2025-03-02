@@ -23,6 +23,10 @@
                     
                     <button type="submit">수정</button>
                 </form>
+                <form action="/admin/documents/<%= document._id %>?_method=DELETE" method="POST">
+                    <input type="text" name="query" value="<%= query %>" style="display: none;">
+                    <button type="submit">삭제</button>
+                </form>
             </li>
         <% }); %>
     </ul>
