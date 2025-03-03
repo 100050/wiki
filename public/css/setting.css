@@ -25,3 +25,9 @@ a {
 body {
     background-color: #e6e6e6;
 }
+
+@media screen and (max-width:870px) {
+    body {
+        background-color: #fff;
+    }
+}

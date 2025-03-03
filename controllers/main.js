@@ -63,7 +63,7 @@ const viewEdit = asyncHandler(async (req, res) => {
     if (document && !document.editable) {
         return res.send(`<script>alert("읽기 전용 문서입니다.");location.href='/document/${req.params.title}';</script>`);
     }
-    if (!req.isEditable) {
+    if (req.isLogin && !req.isEditable) {
         return res.send(`<script>alert("수정 권한이 없습니다.");location.href='/document/${req.params.title}';</script>`);
     }
 

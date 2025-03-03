@@ -73,14 +73,14 @@
 
 /* login */
 .login form {
-    width: 411px;
+    width: 371px;
     margin: 0 auto;
     margin-top: 90px;
 }   
 
 .login form input {
     border: 1px solid black;
-    width: 401px;
+    width: 361px;
     height: 38px;
     border-radius: 4px;
     margin-top: 8px;
@@ -89,7 +89,7 @@
 }
 
 .login form button {
-    width: 411px;
+    width: 371px;
     height: 38px;
     color: white;
     background-color: #05317C;
@@ -162,4 +162,13 @@
     display: block;
     margin-left: auto;
     
+}
+
+@media screen and (max-width:870px) {
+    .edit form textarea {
+        width: calc(100dvw - 2px);
+        margin: 0;
+        padding: 0;
+        resize: none;
+    }
 }
